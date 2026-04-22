@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>西安事变纪念馆</title>
+    <style>
+       .nav {              /*导航大盒子*/
+           display:flex;             /*将导航文字横着排列*/
+           justify-content:center;      /*整排内容，水平居中*/
+           gap:50px;                       /*每个元素之间拉开50px间距*/
+           padding:20px 0;                    /*盒子上下加留白，不贴着页面*/
+           background-color:#f0f5f9;             /*盒子的背景颜色*/
+           border-radius: 8px;                      /*给盒子加圆角，数字越大，越圆*/
+           margin-bottom: 30px;                       /*给盒子的下方留出30px的空白距离*/
+        }
+        .nav div{               /*鼠标没有放到文字时的文字状态*/
+            text-decoration: none;      /*去掉文字自带的装饰，下划线*/
+            color:#2c3e50;                /*文字颜色*/
+            font-size: 18px;                /*文字的大小*/
+            font-weight:500;                  /*文字粗细*/
+            transition:all 0.3s ease;           /*文字转化渐变，更有高级感。all表示全部*/
+        }
+        .nav div:hover{         /*鼠标悬浮专属样式*/
+            color:#c0392b;
+            border-bottom:3px dotted #c0392b;    /*dotted是点状线的意思，鼠标放到文字上会有一条红色的红色虚线*/
+            font-size:20px;                        /*鼠标放到文字时，成为20px*/
+
+        }
+        .content{ /*所有正文内容*/
+            display: none;
+            width:95%;             /*正文盒子的宽度占了90%*/
+            margin: 0 auto;          /*0为上下不留空白，auto代表左右盒子自动水平居中*/
+            line-height:1.8;           /*文字每行之间的间距*/
+            font-size:16px;              /*正文文字大小*/
+            color:#333;                   /*正文文字颜色是深灰色*/
+            background-color:#e6f3ff        /*背景颜色*/
+        }
+        h2{            /*标题标签选择器*/
+            color:#c0392b;
+            border-left:5px solid #c0392b;      /*左边竖线的颜色和大小*/
+            padding-left:10px;                    /*数线和文字之间的距离*/
+        }
+        .show{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- 点击的选项 -->
+<div class="nav">
+    <div onclick="show(1)">西安事变——杨虎城</div>
+    <div onclick="show(2)">路线图</div>
+    <div onclick="show(3)">三人介绍</div>
+    <div onclick="show(4)">...</div>
+</div>
+
+<!-- 每个选项对应的内容 -->
+<div id="box1" class="content show">
+        <h2>首页内容</h2>
+        <p>关于西安事变简介：</p>
+        <p>    西安事变纪念馆是以原张学良公馆、杨虎城止园别墅为基础的西安事变旧址改建的，是遗址性博物馆。</p>
+        <p>   1982年2月23日，西安事变旧址被国务院命名为第二批全国重点文物保护单位。1983年10月，成立西安事变纪念馆筹建处。</p>
+        <p>1986年12月，在纪念西安事变五十周年之际正式对外开放。西安事变纪念馆馆址设在张学良公馆。“西安事变”旧址。</p>
+        <p>杨虎城止园别墅位于西安市青年路117号，占地面积2331m，主体为中西合壁风格的砖木结构三层楼房，并有平房10余间。旧址内举办有“杨虎城将军生平陈列”和杨虎城旧居复原陈列。</p >
+   <p style="color:#0f4c81;">而我们三个人参观的便是——杨虎城止园别墅</p>
+    <img src="im/house.jpg" width="600px">     <img src="im/yang.jpg" width="300px">
+    <img src="im/xiang.jpg" width="500px">
+</div>
+
+<div id="box2" class="content">
+    <h2>路线图</h2>
+    <p style="color:cadetblue;">付国庆：</p><p>计科2406班，24000050614</p>
+    <p style="color:cadetblue;">杨嘉琳：</p><p>计科2406班，24000050624</p>
+    <p style="color:cadetblue;">温思怡：</p><p>计科2406班，24000050612</p>
+    <img src="im/three.jpg" width="400px">
+
+</div>
+
+
+<div id="box3" class="content">
+    <h2>三人</h2>
+    <p></p >
+</div>
+
+<div id="box4" class="content">
+    <h2>其他</h2>
+    <p>其他</p >
+</div>
+
+<!-- 点击切换的JS代码 -->
+<script>
+    function show(num) {
+        // 先把所有内容隐藏
+        let all = document.getElementsByClassName("content");
+        for(let i=0;i<all.length;i++){
+            all[i].classList.remove("show");
+        }
+        // 只显示点击对应的那一个
+        document.getElementById("box"+num).classList.add("show");
+    }
+</script>
+
+</body>
+</html>
